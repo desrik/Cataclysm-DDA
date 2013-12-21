@@ -106,6 +106,7 @@ void init_mapgen_builtin_functions() {
     mapgen_cfunction_map["mil_surplus"] = &mapgen_mil_surplus;
     mapgen_cfunction_map["furniture"] = &mapgen_furniture;
     mapgen_cfunction_map["abstorefront"] = &mapgen_abstorefront;
+    mapgen_cfunction_map["datacenter"] = &mapgen_datacenter;
     mapgen_cfunction_map["cave"] = &mapgen_cave;
     mapgen_cfunction_map["cave_rat"] = &mapgen_cave_rat;
     mapgen_cfunction_map["cavern"] = &mapgen_cavern;
@@ -810,7 +811,7 @@ void mapgen_fungal_bloom(map *m, oter_id, mapgendata, int, float)
                 } else {
                     m->ter_set(i, j, t_tree_fungal_young);
                 }
-            
+
             } else if (one_in(5)) {
                 m->ter_set(i, j, t_shrub_fungal);
             } else if (one_in(10)) {
@@ -4908,6 +4909,44 @@ void mapgen_abstorefront(map *m, oter_id terrain_type, mapgendata, int, float)
 
 }
 
+void mapgen_datacenter(map *m, oter_id terrain_type, mapgendata, int, float)
+{
+
+//    } else if (is_ot_type("datacenter", terrain_type)) {
+
+        fill_background(m, &grass_or_dirt);
+
+        square(m, t_metal_floor, 8, 5, 16, 11);
+        mapf::formatted_set_simple(m, 1, 1,
+                                   "\
+fFFFFFFFFFFFFFFFFFFFFf\n\
+f                    f\n\
+f                    f\n\
+f     |---------|    f\n\
+f     |6 6 R 6 6|    f\n\
+f     |6 6 R 6 6|    f\n\
+f     |6 6 R 6 6|    f\n\
+f     |6 6 R 6 6|    f\n\
+f     |6 6   6 6|    f\n\
+f     |6       6|    f\n\
+f     |6 lt tl 6|    f\n\
+f     |----D----|    f\n\
+f                    f\n\
+f                    f\n\
+fFFFFFFFFFGGFFFFFFFFFf\n",
+                                   mapf::basic_bind("6 f F G - | D", ( ( rng(0,1) == 0) ? t_console : t_console_broken ), t_chainfence_v, t_chainfence_h, t_chaingate_l, t_concrete_h, t_concrete_v, t_door_locked),
+                                   mapf::basic_bind("l t R", f_locker, f_table, f_rack));
+        if (terrain_type == "datacenter_east") {
+        m->rotate(3);
+    }
+    if (terrain_type == "datacenter_north") {
+        m->rotate(2);
+    }
+    if (terrain_type == "datacenter_west") {
+        m->rotate(1);
+    }
+
+}
 
 void mapgen_megastore_entrance(map *m, oter_id terrain_type, mapgendata dat, int turn, float density)
 {

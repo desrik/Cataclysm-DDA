@@ -479,7 +479,7 @@
         "symbol": "LINE_XOXO",
         "color": "cyan",
         "move_cost": 0,
-        "flags": ["NOITEM", "NOITEM", "SUPPORTS_ROOF", "WALL"]
+        "flags": ["NOITEM", "SUPPORTS_ROOF", "WALL"]
     },{
         "type" : "terrain",
         "id" : "t_wall_metal_h",
@@ -487,7 +487,7 @@
         "symbol": "LINE_OXOX",
         "color": "cyan",
         "move_cost": 0,
-        "flags": ["NOITEM", "NOITEM", "SUPPORTS_ROOF", "WALL"]
+        "flags": ["NOITEM", "SUPPORTS_ROOF", "WALL"]
     },{
         "type" : "terrain",
         "id" : "t_wall_glass_v",

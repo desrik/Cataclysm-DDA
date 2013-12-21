@@ -292,6 +292,7 @@ oter_id shop(int dir)
     weightlist.add_item("office_cubical", 2);
     weightlist.add_item("furniture", 2);
     weightlist.add_item("abstorefront", 2);
+    weightlist.add_item("datacenter", 10);
     weightlist.add_item("police", 1);
     weightlist.add_item("s_lot", 4);
 

@@ -130,6 +130,7 @@ void mapgen_pawn(map *m, oter_id terrain_type, mapgendata dat, int turn, float d
 void mapgen_mil_surplus(map *m, oter_id terrain_type, mapgendata dat, int turn, float density);
 void mapgen_furniture(map *m, oter_id terrain_type, mapgendata dat, int turn, float density);
 void mapgen_abstorefront(map *m, oter_id terrain_type, mapgendata dat, int turn, float density);
+void mapgen_datacenter(map *m, oter_id terrain_type, mapgendata dat, int turn, float density);
 void mapgen_megastore_entrance(map *m, oter_id terrain_type, mapgendata dat, int turn, float density);
 void mapgen_megastore(map *m, oter_id terrain_type, mapgendata dat, int turn, float density);
 void mapgen_hospital_entrance(map *m, oter_id terrain_type, mapgendata dat, int turn, float density);
