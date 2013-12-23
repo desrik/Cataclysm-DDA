@@ -179,6 +179,9 @@ overmap_special overmap_specials[NUM_OMSPECS] = {
 {"shelter",       5, 10, 5, 10, "GROUP_NULL", 0, 0, 0, 0,
  &omspec_place::wilderness, mfb(OMS_FLAG_ROAD) | mfb(OMS_FLAG_CLASSIC)},
 
+{"datacenter",   1, 4, 20, -1, "GROUP_NULL", 0, 0, 0, 0,
+ &omspec_place::wilderness, mfb(OMS_FLAG_CLASSIC)},
+
 {"cave",    0, 30,  0, -1, "GROUP_NULL", 0, 0, 0, 0,
  &omspec_place::wilderness, 0},
 
@@ -292,7 +295,6 @@ oter_id shop(int dir)
     weightlist.add_item("office_cubical", 2);
     weightlist.add_item("furniture", 2);
     weightlist.add_item("abstorefront", 2);
-    weightlist.add_item("datacenter", 10);
     weightlist.add_item("police", 1);
     weightlist.add_item("s_lot", 4);
 

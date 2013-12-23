@@ -4909,7 +4909,7 @@ void mapgen_abstorefront(map *m, oter_id terrain_type, mapgendata, int, float)
 
 }
 
-void mapgen_datacenter(map *m, oter_id terrain_type, mapgendata, int, float)
+void mapgen_datacenter(map *m, oter_id, mapgendata, int, float)
 {
 
 //    } else if (is_ot_type("datacenter", terrain_type)) {
@@ -4936,16 +4936,6 @@ f                    f\n\
 fFFFFFFFFFGGFFFFFFFFFf\n",
                                    mapf::basic_bind("6 f F G - | D", ( ( rng(0,1) == 0) ? t_console : t_console_broken ), t_chainfence_v, t_chainfence_h, t_chaingate_l, t_concrete_h, t_concrete_v, t_door_locked),
                                    mapf::basic_bind("l t R", f_locker, f_table, f_rack));
-        if (terrain_type == "datacenter_east") {
-        m->rotate(3);
-    }
-    if (terrain_type == "datacenter_north") {
-        m->rotate(2);
-    }
-    if (terrain_type == "datacenter_west") {
-        m->rotate(1);
-    }
-
 }
 
 void mapgen_megastore_entrance(map *m, oter_id terrain_type, mapgendata dat, int turn, float density)
