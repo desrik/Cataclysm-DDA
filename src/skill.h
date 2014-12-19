@@ -68,6 +68,7 @@ class Skill
         }
 
         bool is_combat_skill() const;
+        bool is_hidden() const;
 };
 
 class SkillLevel : public JsonSerializer, public JsonDeserializer

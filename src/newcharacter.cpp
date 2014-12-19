@@ -1327,9 +1327,15 @@ int set_skills(WINDOW *w, player *u, int &points)
     WINDOW *w_description = newwin(iContentHeight, FULL_SCREEN_WIDTH - 35,
                                    5 + getbegy(w), 31 + getbegx(w));
 
-    std::vector<Skill *> sorted_skills = Skill::skills;
+    std::vector<Skill *> tmp_skills = Skill::skills;
+    std::vector<Skill *> sorted_skills;
+    for( int i = 0; i < tmp_skills.size(); i++ ) {
+      if(!tmp_skills[i]->is_hidden()) {
+        sorted_skills.push_back(tmp_skills[i]);
+      }
+    }
     std::sort(sorted_skills.begin(), sorted_skills.end(), skill_display_sort);
-    const int num_skills = Skill::skills.size();
+    const int num_skills = sorted_skills.size();
     int cur_pos = 0;
     Skill *currentSkill = sorted_skills[cur_pos];
 

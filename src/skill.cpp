@@ -111,6 +111,12 @@ bool Skill::is_combat_skill() const
     return this->_tags.find("combat_skill") != this->_tags.end();
 }
 
+// used for main stats. causes skill lists to hide them
+bool Skill::is_hidden() const
+{
+    return this->_tags.find("hidden") != this->_tags.end();
+}
+
 SkillLevel::SkillLevel(int level, int exercise, bool isTraining, int lastPracticed)
 {
     _level = level;
