@@ -1,6 +1,26 @@
 [
     {
         "type" : "skill",
+        "ident" : "str",
+        "name" : "strength",
+        "description" : "How strong you are."
+    },{
+        "type" : "skill",
+        "ident" : "dex",
+        "name" : "dexterity",
+        "description" : "How dexterous you are."
+    },{
+        "type" : "skill",
+        "ident" : "int",
+        "name" : "intelligence",
+        "description" : "How intelligent you are."
+    },{
+        "type" : "skill",
+        "ident" : "per",
+        "name" : "perception",
+        "description" : "How perceptive you are."
+    },{
+        "type" : "skill",
         "ident" : "barter",
         "name" : "bartering",
         "description" : "Your skill in bargaining, haggling, and trading with others. Higher levels increase the odds of getting the better end of a deal, and might even see you convincing others to give you free stuff."
